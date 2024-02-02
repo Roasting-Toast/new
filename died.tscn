@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://nu6j7nvk5cr"]
+
+[ext_resource type="Script" path="res://died.gd" id="1_438sm"]
+[ext_resource type="Texture2D" uid="uid://bvjj27n1onyid" path="res://PNGS/Play.png" id="1_ixpoh"]
+[ext_resource type="Texture2D" uid="uid://12dl0rwp77gn" path="res://PNGS/Play_pressed.png" id="2_q1p3h"]
+[ext_resource type="Texture2D" uid="uid://co71nx5lwm31p" path="res://PNGS/Play_hover.png" id="3_4a7xx"]
+[ext_resource type="Texture2D" uid="uid://ccsc851gdehas" path="res://Back.png" id="4_0nb34"]
+[ext_resource type="Texture2D" uid="uid://dbk4e2b3jda" path="res://PNGS/back_pressed.png" id="5_dyxyi"]
+[ext_resource type="Texture2D" uid="uid://dip4is7moex3l" path="res://PNGS/Back_hover.png" id="6_k6xum"]
+
+[node name="died" type="Node2D"]
+script = ExtResource("1_438sm")
+
+[node name="You Died" type="TextEdit" parent="."]
+texture_filter = 1
+offset_left = 479.0
+offset_top = 195.0
+offset_right = 561.0
+offset_bottom = 232.0
+scale = Vector2(2, 2)
+text = "You Died!"
+
+[node name="Replay" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 314.0
+offset_top = 364.0
+offset_right = 437.0
+offset_bottom = 478.0
+texture_normal = ExtResource("1_ixpoh")
+texture_pressed = ExtResource("2_q1p3h")
+texture_hover = ExtResource("3_4a7xx")
+stretch_mode = 0
+
+[node name="Main Menu" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 641.0
+offset_top = 357.0
+offset_right = 768.0
+offset_bottom = 477.0
+texture_normal = ExtResource("4_0nb34")
+texture_pressed = ExtResource("5_dyxyi")
+texture_hover = ExtResource("6_k6xum")
+stretch_mode = 0
+
+[connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://d13jx5w6nk5sb"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_ark6u"]
+[ext_resource type="Texture2D" uid="uid://cng4ljgcjm1dl" path="res://Play.png" id="1_llemh"]
+[ext_resource type="Texture2D" uid="uid://c5j38g5si6ke4" path="res://Play_pressed.png" id="2_ln4ep"]
+[ext_resource type="Texture2D" uid="uid://bv72o3c46oi0y" path="res://Play_hover.png" id="3_xg8nh"]
+[ext_resource type="Texture2D" uid="uid://ju7u1l2dbtlu" path="res://Settings.png" id="4_2ax5r"]
+[ext_resource type="Texture2D" uid="uid://3vs1rbkne2bu" path="res://Settings_pressed.png" id="5_actix"]
+[ext_resource type="Texture2D" uid="uid://ipa0srlllpno" path="res://Settings_hover.png" id="6_d1hqv"]
+[ext_resource type="Texture2D" uid="uid://oeo2c604d06e" path="res://Close.png" id="8_yqewp"]
+[ext_resource type="Texture2D" uid="uid://2ordtetgs0j2" path="res://Close_pressed.png" id="9_q1jwe"]
+[ext_resource type="Texture2D" uid="uid://cipuplfff6joc" path="res://Close_hover.png" id="10_ax51i"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ark6u")
+
+[node name="Play Button" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 301.0
+offset_top = 363.0
+offset_right = 405.0
+offset_bottom = 463.0
+texture_normal = ExtResource("1_llemh")
+texture_pressed = ExtResource("2_ln4ep")
+texture_hover = ExtResource("3_xg8nh")
+stretch_mode = 0
+
+[node name="Settings Button" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 741.0
+offset_top = 356.0
+offset_right = 850.0
+offset_bottom = 461.0
+texture_normal = ExtResource("4_2ax5r")
+texture_pressed = ExtResource("5_actix")
+texture_hover = ExtResource("6_d1hqv")
+stretch_mode = 0
+
+[node name="Quit Button" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1031.0
+offset_top = 34.0
+offset_right = 1112.0
+offset_bottom = 115.0
+texture_normal = ExtResource("8_yqewp")
+texture_pressed = ExtResource("9_q1jwe")
+texture_hover = ExtResource("10_ax51i")
+stretch_mode = 0
+
+[connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Settings Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]
